@@ -6,15 +6,17 @@ const PhotoListItem = ({ photo }) => {
   const { city, country } = location;
 
   return (
-    <div className="photo-list-item">
-      <img src={imageSource} alt={`Photo ${id}`} className="photo"/>
-      <img src={profile} alt={`${username}'s profile`} className="profile-picture"/>
-      <div className="photo-info">
-        <h2>{username}</h2>
-        <p>{city}, {country}</p>
+    <div className="photo-list__item">
+      <img src={imageSource} alt={`Photo ${id}`} className="photo-list__image" />
+      <div className="photo-list__user-details">
+        <img src={profile} alt={`${username}'s profile`} className="photo-list__user-profile" />
+        <div className="photo-list__user-info">
+          <h2>{username}</h2>
+          <p className="photo-list__user-location">{city}, {country}</p>
+        </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default PhotoListItem;
