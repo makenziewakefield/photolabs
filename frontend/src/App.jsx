@@ -17,13 +17,12 @@ const sampleDataForPhotoListItem = {
 const App = () => {
   return (
     <div className="App">
-      <PhotoListItem
-        id={sampleDataForPhotoListItem.id}
-        username={sampleDataForPhotoListItem.username}
-        imageSource={sampleDataForPhotoListItem.imageSource}
-        location={`${sampleDataForPhotoListItem.location.city}, ${sampleDataForPhotoListItem.location.country}`}
-        profile={sampleDataForPhotoListItem.profile}
+      {sampleDataForPhotoListItem.map(photo => {
+        <PhotoListItem
+        key={photos.id}
+        photo={photo}
       />
+      })}
     </div>
   );
 };
