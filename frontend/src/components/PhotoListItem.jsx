@@ -1,14 +1,16 @@
+// frontend/src/components/PhotoListItem.jsx
 import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = ({ photo }) => {
-  const { id, username, imageSource, location, profile } = photo;
+  const { id, user, urls, location } = photo;
+  const { username, profile } = user;
   const { city, country } = location;
 
   return (
-    <div className="photo-list__item">
-      <img src={imageSource} alt={`Photo ${id}`} className="photo-list__image" />
+    <li className="photo-list__item">
+      <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" />
       <div className="photo-fav-button-container">
         <PhotoFavButton />
       </div>
@@ -19,7 +21,7 @@ const PhotoListItem = ({ photo }) => {
           <p className="photo-list__user-location">{city}, {country}</p>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
