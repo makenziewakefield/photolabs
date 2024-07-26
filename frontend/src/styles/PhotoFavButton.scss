@@ -16,3 +16,17 @@
   padding: 7px;
   top: 2px;
 }
+
+.photo-fav-button {
+  // Base styles for the button
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.photo-fav-button.active {
+  color: red; // Active state color (liked)
+}
+
+// .photo-fav-button.inactive {
+//   color: gray; // Inactive state color (not liked)
+// }
