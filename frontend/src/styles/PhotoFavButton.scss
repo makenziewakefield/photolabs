@@ -1,9 +1,10 @@
-
-
 .photo-fav-button {
-  // Base styles for the button
   cursor: pointer;
   transition: color 0.3s;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
 }
 
 .photo-fav-button.active {

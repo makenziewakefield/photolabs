@@ -6,6 +6,7 @@
   border-style: solid;
   border-radius: 8px;
   max-width: fit-content;
+  position: relative;
 }
 
 .photo-list__image {
@@ -45,4 +46,10 @@
 
 .photo-list__user-location {
   color: #838383;
+}
+
+.photo-fav-button-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
