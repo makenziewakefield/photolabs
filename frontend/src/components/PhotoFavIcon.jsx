@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PhotoFavButton from './PhotoFavButton';
 import FavIcon from './FavIcon';
 import "../styles/PhotoFavButton.scss";
 

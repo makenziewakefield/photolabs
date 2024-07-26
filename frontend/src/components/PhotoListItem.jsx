@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoFavButton from "./PhotoFavButton";
 import PhotoFavIcon from "./PhotoFavIcon";
 import "../styles/PhotoListItem.scss";
 
