@@ -11,10 +11,10 @@ const PhotoListItem = ({ photo, isFavorite, toggleFavorite }) => {
     <li className="photo-list__item">
       <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" />
       <div className="photo-fav-button-container">
-        <PhotoFavButton 
-        photoId={photo.id}
-        isFavorite={isFavorite}
-        toggleFavorite={toggleFavorite}
+        <PhotoFavButton
+          photoId={id}
+          isFavorite={isFavorite}
+          toggleFavorite={toggleFavorite}
         />
       </div>
       <div className="photo-list__user-details">
