@@ -16,11 +16,14 @@ const HomeRoute = ({ photos, topics }) => {
     );
   };
 
+  const hasFavorites = favoritedPhotos.length > 0;
+
   return (
     <div className="home-route">
       <TopNavigationBar
         topics={topics}
         favoritedPhotos={favoritedPhotos}
+        hasFavorites ={hasFavorites}
       />
       <PhotoList
         photos={photos}
