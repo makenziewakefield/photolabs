@@ -16,6 +16,7 @@ const HomeRoute = ({ photos, topics }) => {
     );
   };
 
+  // Boolean indicating if there are favorited photos
   const hasFavorites = favoritedPhotos.length > 0;
 
   return (

@@ -3,9 +3,8 @@ import FavIcon from './FavIcon';
 
 import '../styles/FavBadge.scss';
 
-const FavBadge = ({ favoritedPhotos }) => {
+const FavBadge = ({ favoritedPhotos, hasFavorites }) => {
 
-  const hasFavorites = favoritedPhotos.length > 0;
   return (
     <div className={`fav-badge ${hasFavorites ? 'fav-badge--active' : ''}`}>
       <div className='fav-badge'>
