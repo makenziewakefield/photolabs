@@ -1,9 +1,9 @@
 .fav-badge {
   position: relative;
+}
 
-  &--active .fav-icon {
-    color: red;
-  }
+.fav-badge--active .fav-icon {
+  color: red;
 }
 
 .fav-badge__count { 
