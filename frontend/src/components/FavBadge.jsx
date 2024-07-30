@@ -7,7 +7,7 @@ const FavBadge = ({ hasFavorites }) => {
 
   return (
     <div className={`fav-badge ${hasFavorites ? 'fav-badge--active' : ''}`}>
-      <FavIcon displayAlert={hasFavorites} />
+      <FavIcon selected={hasFavorites} />
     </div>
   )
 };
