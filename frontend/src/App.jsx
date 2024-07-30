@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick}/>
-      <PhotoDetailsModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <PhotoDetailsModal isOpen={isModalOpen} onClose={handleCloseModal} photo={selectedPhoto}/>
       </div>
   );
 };

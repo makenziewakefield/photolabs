@@ -3,7 +3,9 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = ({ isOpen, onClose }) => {
+const PhotoDetailsModal = ({ isOpen, onClose, photo }) => {
+  console.log('Selected photo data:', photo);
+
   if (!isOpen) return null;
 
   return (
