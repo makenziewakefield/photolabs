@@ -8,8 +8,8 @@ const PhotoListItem = ({ photo, isFavorite, toggleFavorite, onClick }) => {
   const { city, country } = location;
 
   return (
-    <li className="photo-list__item" onClick={onClick}>
-      <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" />
+    <li className="photo-list__item">
+      <img className="photo-list__image" src={urls.regular} alt={`Photo ${id}`} onClick={onClick}/>
       <div className="photo-fav-button-container">
         <PhotoFavButton
           photoId={id}

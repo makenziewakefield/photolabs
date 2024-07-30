@@ -3,7 +3,7 @@ import TopNavigationBar from './TopNavigationBar';
 import PhotoList from './PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics }) => {
+const HomeRoute = ({ photos, topics, onPhotoClick }) => {
   // State to track favorited photos
   const [favoritedPhotos, setFavoritedPhotos] = useState([]);
 
@@ -30,6 +30,7 @@ const HomeRoute = ({ photos, topics }) => {
         photos={photos}
         favoritedPhotos={favoritedPhotos}
         toggleFavorite={toggleFavorite}
+        onPhotoClick={onPhotoClick}
       />
     </div>
   );

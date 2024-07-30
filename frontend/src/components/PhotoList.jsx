@@ -11,7 +11,7 @@ const PhotoList = ({ photos, favoritedPhotos, toggleFavorite, onPhotoClick }) =>
         photo={photo}
         isFavorite={favoritedPhotos.includes(photo.id)}
         toggleFavorite={toggleFavorite}
-        onClick={() => onPhotoClick}
+        onClick={() => onPhotoClick(photo)}
         />
       ))}
     </ul>
