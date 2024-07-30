@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.fav-badge--active .fav-icon {
-  color: red;
+.fav-badge--active {
+  background-color: red;
 }
 
 .fav-badge__count { 

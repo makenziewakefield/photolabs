@@ -6,7 +6,6 @@ const PhotoFavButton = ({ photoId, isFavorite, toggleFavorite }) => {
 
   const handleClick = () => {
     toggleFavorite(photoId);
-    console.log(isFavorite ? 'Photo unliked' : 'Photo liked');
   };
 
   return (
