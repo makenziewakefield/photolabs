@@ -51,6 +51,7 @@ const App = () => {
         similarPhotos={similarPhoto}
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
+        favoritedPhotos={favoritedPhotos}
       />
     </div>
   );
