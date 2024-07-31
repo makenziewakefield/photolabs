@@ -1,11 +1,10 @@
 import React from 'react';
-
-import '../styles/PhotoDetailsModal.scss'
+import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
+import PhotoFavButton from 'components/PhotoFavButton';
 
-const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos }) => {
-  console.log('Selected photo data:', photo);
+const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos, isFavorite, toggleFavorite }) => {
 
   if (!isOpen) return null;
 
@@ -18,14 +17,20 @@ const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos }) => {
       </button>
       <div className="photo-details-modal__content">
         {photo ? (
-          <>
+          <div className="photo-details-modal__image-container">
+            <PhotoFavButton
+              photoId={photo.id}
+              isFavorite={isFavorite}
+              toggleFavorite={toggleFavorite}
+              className="photo-details-modal__fav-button"
+            />
             <img
               src={photo.urls.regular}
               alt={photo.description || 'Selected photo'}
               className="photo-details-modal__image"
             />
             <div className="photo-details-modal__photographer-details">
-            <img
+              <img
                 src={photo.user.profile}
                 alt={photo.user.name}
                 className="photo-details-modal__photographer-profile"
@@ -37,7 +42,7 @@ const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos }) => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ) : (
           <p>No photo data available</p>
         )}
@@ -46,15 +51,15 @@ const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos }) => {
           <PhotoList
             photos={similarPhotosArray}
             favoritedPhotos={[]}
-            toggleFavorite={() => {}}
-            onPhotoClick={() => {}}
+            toggleFavorite={() => { }}
+            onPhotoClick={() => { }}
           />
         ) : (
           <p>No similar photos available</p>
         )}
       </div>
     </div>
-  )
+  );
 };
 
 export default PhotoDetailsModal;

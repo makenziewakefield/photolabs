@@ -3,18 +3,7 @@ import TopNavigationBar from './TopNavigationBar';
 import PhotoList from './PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, onPhotoClick }) => {
-  // State to track favorited photos
-  const [favoritedPhotos, setFavoritedPhotos] = useState([]);
-
-  // Function to toggle favorite status of a photo
-  const toggleFavorite = (photoId) => {
-    setFavoritedPhotos(prev =>
-      prev.includes(photoId)
-        ? prev.filter(id => id !== photoId)
-        : [...prev, photoId]
-    );
-  };
+const HomeRoute = ({ photos, topics, handlePhotoClick, favoritedPhotos, toggleFavorite }) => {
 
   // Boolean indicating if there are favorited photos
   const hasFavorites = favoritedPhotos.length > 0;
@@ -30,7 +19,7 @@ const HomeRoute = ({ photos, topics, onPhotoClick }) => {
         photos={photos}
         favoritedPhotos={favoritedPhotos}
         toggleFavorite={toggleFavorite}
-        onPhotoClick={onPhotoClick}
+        handlePhotoClick={handlePhotoClick}
       />
     </div>
   );

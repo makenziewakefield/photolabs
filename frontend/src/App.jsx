@@ -9,12 +9,21 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [similarPhoto, setSimilarPhotos] = useState([]);
+  const [favoritedPhotos, setFavoritedPhotos] = useState([]);
 
-  // Function to handle photo click and open modal
-  const handleOpenModal = (selectedPhoto) => {
-    setSelectedPhoto(selectedPhoto);
-    setSimilarPhotos(selectedPhoto.similar_photos);
+  const handlePhotoClick = photo => {
+    setSelectedPhoto(photo);
     setIsModalOpen(true);
+    const similar = photos.filter(photoObject => photoObject.topic === photo.topic && photoObject.id !== photo.id);
+    setSimilarPhotos(similar);
+  };
+
+  const toggleFavorite = photoId => {
+    setFavoritedPhotos((prevFavorites) =>
+    prevFavorites.includes(photoId)
+    ? prevFavorites.filter(id => id !== photoId)
+    : [...prevFavorites, photoId]
+    );
   };
 
   // function to handle closing the modal
@@ -22,16 +31,26 @@ const App = () => {
     setIsModalOpen(false);
     setSelectedPhoto(null);
     setSimilarPhotos([]);
-  }
+  };
+
+  const isFavorite = selectedPhoto ? favoritedPhotos.includes(selectedPhoto.id) : false;
 
   return (
     <div className="App">
-      <HomeRoute photos={photos} topics={topics} onPhotoClick={handleOpenModal} />
+      <HomeRoute
+        photos={photos}
+        topics={topics}
+        handlePhotoClick={handlePhotoClick}
+        favoritedPhotos={favoritedPhotos}
+        toggleFavorite={toggleFavorite}
+      />
       <PhotoDetailsModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         photo={selectedPhoto}
         similarPhotos={similarPhoto}
+        toggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
       />
     </div>
   );
