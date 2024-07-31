@@ -9,7 +9,6 @@
   width: 55%;
   overflow-y: auto;
   border-radius: 12px;
-  position: relative;
 }
 
 .photo-details-modal__close-button {
@@ -30,7 +29,6 @@
   top: 10px;
   left: 10px; 
   z-index: 1;
-  padding: 36px;
 }
 
 .photo-details-modal__images {
@@ -39,8 +37,7 @@
 }
 
 .photo-details-modal__image {
-  max-width: 100%;
-  max-height: 75vh;
+  max-width: 85vh;
   border-radius: 8px;
   margin-left: 36px;
   display: block;
