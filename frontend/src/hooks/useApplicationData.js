@@ -1,48 +1,39 @@
-import { useState } from 'react';
+// useApplicationData.js
+import { useReducer } from 'react';
+import reducer from './reducer';
+import { SET_MODAL_OPEN, SET_SELECTED_PHOTO, SET_SIMILAR_PHOTOS, TOGGLE_FAVORITE } from './actionTypes';
 import photos from 'mocks/photos';
 
 const useApplicationData = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [similarPhoto, setSimilarPhotos] = useState([]);
-  const [favoritedPhotos, setFavoritedPhotos] = useState([]);
+  const [state, dispatch] = useReducer(reducer, {
+    isModalOpen: false,
+    selectedPhoto: null,
+    similarPhoto: [],
+    favoritedPhotos: [],
+  });
 
   const handlePhotoClick = (photo) => {
-    setSelectedPhoto(photo);
-    setIsModalOpen(true);
+    dispatch({ type: SET_SELECTED_PHOTO, payload: photo });
+    dispatch({ type: SET_MODAL_OPEN, payload: true });
     const similar = photos.filter(photoObject => photoObject.topic === photo.topic && photoObject.id !== photo.id);
-    setSimilarPhotos(similar);
+    dispatch({ type: SET_SIMILAR_PHOTOS, payload: similar });
   };
 
   const toggleFavorite = (photoId) => {
-    setFavoritedPhotos((prevFavorites) =>
-      prevFavorites.includes(photoId)
-        ? prevFavorites.filter(id => id !== photoId)
-        : [...prevFavorites, photoId]
-    );
-  };
-
-  const setPhotoSelected = (photo) => {
-    setSelectedPhoto(photo);
+    dispatch({ type: TOGGLE_FAVORITE, payload: photoId });
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedPhoto(null);
-    setSimilarPhotos([]);
+    dispatch({ type: SET_MODAL_OPEN, payload: false });
+    dispatch({ type: SET_SELECTED_PHOTO, payload: null });
+    dispatch({ type: SET_SIMILAR_PHOTOS, payload: [] });
   };
 
   return {
-    state: {
-      isModalOpen,
-      selectedPhoto,
-      similarPhoto,
-      favoritedPhotos
-    },
+    state,
     toggleFavorite,
-    setPhotoSelected,
     handleCloseModal,
-    handlePhotoClick
+    handlePhotoClick,
   };
 };
 

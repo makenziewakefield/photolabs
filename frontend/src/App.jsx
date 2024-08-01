@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import HomeRoute from 'components/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
@@ -10,7 +10,6 @@ const App = () => {
   const {
     state: { isModalOpen, selectedPhoto, similarPhoto, favoritedPhotos },
     toggleFavorite,
-    setPhotoSelected,
     handleCloseModal,
     handlePhotoClick
   } = useApplicationData();
