@@ -1,4 +1,4 @@
-import { SET_MODAL_OPEN, SET_SELECTED_PHOTO, SET_SIMILAR_PHOTOS, TOGGLE_FAVORITE } from './actionTypes';
+import { OPEN_MODAL, CLOSE_MODAL, SET_SELECTED_PHOTO, SET_SIMILAR_PHOTOS, TOGGLE_FAVORITE } from './actionTypes';
 
 const initialState = {
   isModalOpen: false,
@@ -9,8 +9,10 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_MODAL_OPEN:
-      return { ...state, isModalOpen: action.payload };
+    case OPEN_MODAL:
+      return { ...state, isModalOpen: true };
+    case CLOSE_MODAL:
+      return { ... state, isModalOpen: false}
     case SET_SELECTED_PHOTO:
       return { ...state, selectedPhoto: action.payload };
     case SET_SIMILAR_PHOTOS:
