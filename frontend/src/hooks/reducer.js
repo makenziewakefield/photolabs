@@ -5,7 +5,8 @@ import {
   SET_SIMILAR_PHOTOS, 
   TOGGLE_FAVORITE, 
   SET_PHOTO_DATA,
-  SET_TOPIC_DATA
+  SET_TOPIC_DATA,
+  FETCH_PHOTOS_BY_TOPIC,
 } from './actionTypes';
 
 const initialState = {
@@ -38,6 +39,8 @@ const reducer = (state, action) => {
       return { ...state, photoData: action.payload };
     case SET_TOPIC_DATA:
       return { ...state, topicData: action.payload };
+    case FETCH_PHOTOS_BY_TOPIC:
+      return { ...state, photoData: action.payload };
     default:
       return state;
   }

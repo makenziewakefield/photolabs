@@ -16,7 +16,8 @@ const App = () => {
     },
     toggleFavorite,
     handleCloseModal,
-    handlePhotoClick
+    handlePhotoClick,
+    handleTopicClick
   } = useApplicationData();
 
   const isFavorite = selectedPhoto ? favoritedPhotos.includes(selectedPhoto.id) : false;
@@ -27,6 +28,7 @@ const App = () => {
         photos={photoData}
         topics={topicData}
         handlePhotoClick={handlePhotoClick}
+        handleTopicClick={handleTopicClick}
         favoritedPhotos={favoritedPhotos}
         toggleFavorite={toggleFavorite}
       />

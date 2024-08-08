@@ -1,6 +1,15 @@
 import { useReducer, useEffect } from 'react';
 import reducer from './reducer';
-import { OPEN_MODAL, CLOSE_MODAL, SET_SELECTED_PHOTO, SET_SIMILAR_PHOTOS, TOGGLE_FAVORITE, SET_PHOTO_DATA, SET_TOPIC_DATA } from './actionTypes';
+import { 
+  OPEN_MODAL, 
+  CLOSE_MODAL, 
+  SET_SELECTED_PHOTO, 
+  SET_SIMILAR_PHOTOS, 
+  TOGGLE_FAVORITE, 
+  SET_PHOTO_DATA, 
+  SET_TOPIC_DATA,
+  FETCH_PHOTOS_BY_TOPIC
+} from './actionTypes';
 
 
 const useApplicationData = () => {
@@ -32,6 +41,13 @@ const useApplicationData = () => {
     dispatch({ type: SET_SIMILAR_PHOTOS, payload: similar });
   };
 
+  const handleTopicClick = (topicId) => {
+    fetch(`/api/topics/photos/${topicId}`)
+      .then(response => response.json())
+      .then(data => dispatch({ type: FETCH_PHOTOS_BY_TOPIC, payload: data }))
+      .catch(error => console.error('Error fetching photos by topic:', error));
+  };
+
   const toggleFavorite = (photoId) => {
     dispatch({ type: TOGGLE_FAVORITE, payload: photoId });
   };
@@ -47,6 +63,7 @@ const useApplicationData = () => {
     toggleFavorite,
     handleCloseModal,
     handlePhotoClick,
+    handleTopicClick
   };
 };
 
