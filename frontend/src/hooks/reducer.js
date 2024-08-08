@@ -1,10 +1,20 @@
-import { OPEN_MODAL, CLOSE_MODAL, SET_SELECTED_PHOTO, SET_SIMILAR_PHOTOS, TOGGLE_FAVORITE } from './actionTypes';
+import { 
+  OPEN_MODAL, 
+  CLOSE_MODAL, 
+  SET_SELECTED_PHOTO, 
+  SET_SIMILAR_PHOTOS, 
+  TOGGLE_FAVORITE, 
+  SET_PHOTO_DATA,
+  SET_TOPIC_DATA
+} from './actionTypes';
 
 const initialState = {
   isModalOpen: false,
   selectedPhoto: null,
   similarPhoto: [],
   favoritedPhotos: [],
+  photoData: [],
+  topicData: [],
 };
 
 const reducer = (state, action) => {
@@ -12,7 +22,7 @@ const reducer = (state, action) => {
     case OPEN_MODAL:
       return { ...state, isModalOpen: true };
     case CLOSE_MODAL:
-      return { ... state, isModalOpen: false}
+      return { ...state, isModalOpen: false };
     case SET_SELECTED_PHOTO:
       return { ...state, selectedPhoto: action.payload };
     case SET_SIMILAR_PHOTOS:
@@ -24,6 +34,10 @@ const reducer = (state, action) => {
           ? state.favoritedPhotos.filter(id => id !== action.payload)
           : [...state.favoritedPhotos, action.payload],
       };
+    case SET_PHOTO_DATA:
+      return { ...state, photoData: action.payload };
+    case SET_TOPIC_DATA:
+      return { ...state, topicData: action.payload };
     default:
       return state;
   }
