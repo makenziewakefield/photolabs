@@ -15,20 +15,20 @@ const useApplicationData = () => {
 
   useEffect(() => {
     fetch("/api/photos")
-      .then((response) => response.json())
-      .then((data) => dispatch({ type: SET_PHOTO_DATA, payload: data }));
-  }, []);
-
-  useEffect(() => {
+      .then(response => response.json())
+      .then(data => dispatch({ type: SET_PHOTO_DATA, payload: data }))
+      .catch(error => console.error("Error fetching photos:", error));
+      
     fetch("/api/topics")
       .then(response => response.json())
-      .then(data => dispatch({ type: SET_TOPIC_DATA, payload: data }));
+      .then(data => dispatch({ type: SET_TOPIC_DATA, payload: data }))
+      .catch(error => console.error("Error fetching topics:", error));
   }, []);
 
   const handlePhotoClick = (photo) => {
     dispatch({ type: SET_SELECTED_PHOTO, payload: photo });
     dispatch({ type: OPEN_MODAL });
-    const similar = photos.filter(photoObject => photoObject.topic === photo.topic && photoObject.id !== photo.id);
+    const similar = state.photoData.filter(photoObject => photoObject.topic === photo.topic && photoObject.id !== photo.id);
     dispatch({ type: SET_SIMILAR_PHOTOS, payload: similar });
   };
 
