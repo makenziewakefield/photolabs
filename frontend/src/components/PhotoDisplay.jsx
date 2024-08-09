@@ -5,7 +5,7 @@ import '../styles/PhotoDisplay.scss';
 
 // The PhotoDisplay component renders within the MODAL (PhotoDetailsModal)
 const PhotoDisplay = ({ photo, isFavorite, toggleFavorite }) => {
-  
+
   if (!photo) return <p>No photo data available</p>;
 
   return (

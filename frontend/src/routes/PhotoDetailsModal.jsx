@@ -6,7 +6,6 @@ import '../styles/PhotoDetailsModal.scss';
 
 
 // The PhotoDetailsModal component displays the selected photo in a modal
-// along with details of the photographer and similar photos.
 const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos, isFavorite, toggleFavorite, favoritedPhotos }) => {
 
   // If the modal is not open, do not render anything

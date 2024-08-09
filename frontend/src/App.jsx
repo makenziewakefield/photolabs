@@ -6,10 +6,10 @@ import './App.scss';
 
 const App = () => {
   const {
-    state: { 
-      isModalOpen, 
-      selectedPhoto, 
-      similarPhoto, 
+    state: {
+      isModalOpen,
+      selectedPhoto,
+      similarPhoto,
       favoritedPhotos,
       photoData,
       topicData,

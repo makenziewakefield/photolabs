@@ -1,9 +1,9 @@
-import { 
-  OPEN_MODAL, 
-  CLOSE_MODAL, 
-  SET_SELECTED_PHOTO, 
-  SET_SIMILAR_PHOTOS, 
-  TOGGLE_FAVORITE, 
+import {
+  OPEN_MODAL,
+  CLOSE_MODAL,
+  SET_SELECTED_PHOTO,
+  SET_SIMILAR_PHOTOS,
+  TOGGLE_FAVORITE,
   SET_PHOTO_DATA,
   SET_TOPIC_DATA,
   FETCH_PHOTOS_BY_TOPIC,
@@ -11,7 +11,7 @@ import {
 
 
 const reducer = (state, action) => {
-  
+
   switch (action.type) {
     case OPEN_MODAL:
       return { ...state, isModalOpen: true };
