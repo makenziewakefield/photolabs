@@ -1,0 +1,14 @@
+.similar-photos-section {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(214, 212, 212);
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1e1e1e;
+    margin-bottom: 24px;
+  }
+}

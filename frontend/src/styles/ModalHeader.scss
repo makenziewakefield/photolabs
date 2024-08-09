@@ -1,0 +1,17 @@
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 16px;
+  margin-top: 8px;
+
+  &__close-button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+}

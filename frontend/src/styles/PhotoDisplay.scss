@@ -1,0 +1,45 @@
+.photo-display {
+  margin-top: 16px;
+  position: relative;
+
+  &__image {
+    max-width: 90%;
+    margin-left: 36px;
+  }
+
+  &__photographer-details {
+    display: flex;
+    font-size: 16px;
+    margin-left: 36px;
+    margin-top: 24px;
+  }
+
+  &__photographer-profile {
+    object-fit: cover;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__user-details {
+    margin-top: 5px;
+  }
+
+  &__photographer-info {
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  &__photographer-location {
+    color: #838383;
+  }
+
+  .photo-fav-button {
+    top: 10px;
+    left: 10px;
+    padding-left: 36px;
+    position: absolute;
+  }
+}
