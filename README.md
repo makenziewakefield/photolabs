@@ -22,3 +22,9 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+
+## Screenshots
+
+!["Screenshot of the main page of the application"](https://github.com/makenziewakefield/photolabs/blob/main/docs/photolabs-main-page.png)
+
+!["Screenshot of modal of selected photo"](https://github.com/makenziewakefield/photolabs/blob/main/docs/photolabs-modal.png)
