@@ -2,7 +2,9 @@ import React from 'react';
 import PhotoList from 'components/PhotoList';
 import '../styles/SimilarPhotoSection.scss';
 
+// Renders within the MODAL (PhotoDetailsModal)
 const SimilarPhotosSection = ({ similarPhotos, favoritedPhotos, toggleFavorite }) => {
+
   const similarPhotosArray = Object.values(similarPhotos);
 
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import useApplicationData from 'hooks/useApplicationData';
+import './App.scss';
 
 const App = () => {
   const {
@@ -20,6 +20,7 @@ const App = () => {
     handleTopicClick
   } = useApplicationData();
 
+  // Determine if the currently selected photo is marked as a favorite.
   const isFavorite = selectedPhoto ? favoritedPhotos.includes(selectedPhoto.id) : false;
 
   return (

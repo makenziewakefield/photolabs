@@ -7,14 +7,13 @@ const PhotoFavIcon = () => {
 
   const handleClick = () => {
     setIsLiked(prevState => !prevState);
-    console.log(isLiked ? 'Photo unliked' : 'Photo liked');
   };
 
   return (
     <div className="photo-fav-icon" onClick={handleClick}>
       <FavIcon
         selected={isLiked}
-        displayAlert={isLiked} // Display alert if the photo is liked
+        displayAlert={isLiked}
       />
     </div>
   );

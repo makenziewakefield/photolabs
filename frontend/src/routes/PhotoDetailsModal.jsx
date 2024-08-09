@@ -1,10 +1,15 @@
 import React from 'react';
-import PhotoDisplay from './PhotoDisplay';
-import SimilarPhotosSection from './SimilarPhotoSection';
-import ModalHeader from './ModalHeader';
+import SimilarPhotoSection from 'components/SimilarPhotoSection';
+import ModalHeader from 'components/ModalHeader';
+import PhotoDisplay from 'components/PhotoDisplay';
 import '../styles/PhotoDetailsModal.scss';
 
+
+// The PhotoDetailsModal component displays the selected photo in a modal
+// along with details of the photographer and similar photos.
 const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos, isFavorite, toggleFavorite, favoritedPhotos }) => {
+
+  // If the modal is not open, do not render anything
   if (!isOpen) return null;
 
   return (
@@ -16,7 +21,7 @@ const PhotoDetailsModal = ({ isOpen, onClose, photo, similarPhotos, isFavorite, 
           isFavorite={isFavorite}
           toggleFavorite={toggleFavorite}
         />
-        <SimilarPhotosSection
+        <SimilarPhotoSection
           similarPhotos={similarPhotos}
           favoritedPhotos={favoritedPhotos}
           toggleFavorite={toggleFavorite}

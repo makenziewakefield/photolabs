@@ -3,6 +3,7 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = ({ photo, isFavorite, toggleFavorite, onClick }) => {
+  
   const { id, user, urls, location } = photo;
   const { username, profile } = user;
   const { city, country } = location;
