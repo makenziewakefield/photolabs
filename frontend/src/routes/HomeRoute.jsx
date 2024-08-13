@@ -3,7 +3,7 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, handlePhotoClick, handleTopicClick, favoritedPhotos, toggleFavorite }) => {
+const HomeRoute = ({ photos, topics, handlePhotoClick, handleTopicClick, favoritedPhotos, toggleFavorite, handleFavIconClick }) => {
 
   // Boolean indicating if there are favorited photos
   const hasFavorites = favoritedPhotos.length > 0;
@@ -15,6 +15,7 @@ const HomeRoute = ({ photos, topics, handlePhotoClick, handleTopicClick, favorit
         favoritedPhotos={favoritedPhotos}
         hasFavorites={hasFavorites}
         handleTopicClick={handleTopicClick}
+        handleFavIconClick={handleFavIconClick}
       />
       <PhotoList
         photos={photos}

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+import LikedPhotosModal from 'components/LikedPhotosModal';
 import useApplicationData from 'hooks/useApplicationData';
 import './App.scss';
 
@@ -17,8 +18,16 @@ const App = () => {
     toggleFavorite,
     handleCloseModal,
     handlePhotoClick,
-    handleTopicClick
+    handleTopicClick,
   } = useApplicationData();
+
+  // State for liked photos modal
+  const [isLikedPhotosModalOpen, setLikedPhotosModalOpen] = useState(false);
+
+   // Handle clicking on the favorites icon
+   const handleFavIconClick = () => {
+    setLikedPhotosModalOpen(!isLikedPhotosModalOpen);
+  };
 
   // Determine if the currently selected photo is marked as a favorite.
   const isFavorite = selectedPhoto ? favoritedPhotos.includes(selectedPhoto.id) : false;
@@ -32,6 +41,7 @@ const App = () => {
         handleTopicClick={handleTopicClick}
         favoritedPhotos={favoritedPhotos}
         toggleFavorite={toggleFavorite}
+        handleFavIconClick={handleFavIconClick}
       />
       <PhotoDetailsModal
         isOpen={isModalOpen}
@@ -41,6 +51,15 @@ const App = () => {
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
         favoritedPhotos={favoritedPhotos}
+      />
+      <LikedPhotosModal
+        isOpen={isLikedPhotosModalOpen}
+        onClose={() => setLikedPhotosModalOpen(false)}
+        favoritedPhotos={favoritedPhotos || []}
+        photoData={photoData}
+        toggleFavorite={toggleFavorite}
+        handlePhotoClick={handlePhotoClick}
+        handleFavIconClick={handleFavIconClick}
       />
     </div>
   );

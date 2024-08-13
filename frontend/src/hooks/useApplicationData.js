@@ -38,6 +38,8 @@ const useApplicationData = () => {
       .catch(error => console.error("Error fetching topics:", error));
   }, []);
 
+  const favoritedPhotos = state.favoritedPhotos;
+
 
   // Handle photo click by setting selected photo and opening the modal
   const handlePhotoClick = (photo) => {
@@ -72,7 +74,8 @@ const useApplicationData = () => {
     toggleFavorite,
     handleCloseModal,
     handlePhotoClick,
-    handleTopicClick
+    handleTopicClick,
+    favoritedPhotos
   };
 };
 
